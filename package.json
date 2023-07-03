@@ -1,5 +1,5 @@
 {
-  "name": "my-t3-drizzle",
+  "name": "my-t3-drizzle-pg",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,9 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "db:push": "drizzle-kit push:mysql --config drizzle.config.ts"
+    "introspect": "drizzle-kit introspect:pg",
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "tsx drizzle-migrate.ts"
   },
   "dependencies": {
     "@paralleldrive/cuid2": "^2.2.0",
@@ -22,6 +24,7 @@
     "mysql2": "^3.2.0",
     "next": "^13.4.1",
     "next-auth": "^4.21.0",
+    "postgres": "^3.3.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "1.12.2",

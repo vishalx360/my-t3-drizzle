@@ -1,6 +1,6 @@
-# Create T3 App
+# Create T3 App with Drizzle ORM and Postgres
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app` using [Drizzle-orm](https://github.com/drizzle-team/drizzle-orm).
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app` using [Drizzle-orm] and Postgres (https://github.com/drizzle-team/drizzle-orm).
 
 ## Get started
 
