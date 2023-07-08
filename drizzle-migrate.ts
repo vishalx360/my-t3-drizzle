@@ -1,9 +1,7 @@
-// import { env } from "@/env.mjs";
-
+import dotenv from "dotenv";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
-import dotenv from "dotenv";
 dotenv.config();
 
 const sql = postgres(process.env.DATABASE_URL, { max: 1 })

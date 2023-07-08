@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS "accounts" (
 	"createdAt" timestamp DEFAULT now() NOT NULL,
 	"updatedAt" timestamp DEFAULT now() NOT NULL
 );
-
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "posts" (
 	"id" varchar(191) PRIMARY KEY NOT NULL,
 	"user_id" varchar(191) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS "posts" (
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
-
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "sessions" (
 	"id" varchar(191) PRIMARY KEY NOT NULL,
 	"sessionToken" varchar(191) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS "sessions" (
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
-
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "users" (
 	"id" varchar(191) PRIMARY KEY NOT NULL,
 	"name" varchar(191),
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
-
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "verification_tokens" (
 	"identifier" varchar(191) PRIMARY KEY NOT NULL,
 	"token" varchar(191) NOT NULL,
@@ -51,17 +51,17 @@ CREATE TABLE IF NOT EXISTS "verification_tokens" (
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
-
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "example" (
 	"id" varchar(191) PRIMARY KEY NOT NULL,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
-
-CREATE UNIQUE INDEX IF NOT EXISTS "accounts__provider__providerAccountId__idx" ON "accounts" ("provider","providerAccountId");
-CREATE INDEX IF NOT EXISTS "accounts__userId__idx" ON "accounts" ("userId");
-CREATE UNIQUE INDEX IF NOT EXISTS "posts__user_id__idx" ON "posts" ("user_id");
-CREATE UNIQUE INDEX IF NOT EXISTS "sessions__sessionToken__idx" ON "sessions" ("sessionToken");
-CREATE INDEX IF NOT EXISTS "sessions__userId__idx" ON "sessions" ("userId");
-CREATE UNIQUE INDEX IF NOT EXISTS "users__email__idx" ON "users" ("email");
+--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "accounts__provider__providerAccountId__idx" ON "accounts" ("provider","providerAccountId");--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "accounts__userId__idx" ON "accounts" ("userId");--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "posts__user_id__idx" ON "posts" ("user_id");--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "sessions__sessionToken__idx" ON "sessions" ("sessionToken");--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "sessions__userId__idx" ON "sessions" ("userId");--> statement-breakpoint
+CREATE UNIQUE INDEX IF NOT EXISTS "users__email__idx" ON "users" ("email");--> statement-breakpoint
 CREATE UNIQUE INDEX IF NOT EXISTS "verification_tokens__token__idx" ON "verification_tokens" ("token");
